@@ -17,11 +17,12 @@ body {
 .header {
     background-color: #007bff;
     color: white;
-    padding: 15px 20px;
+    .header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Esto distribuye logo, nav y botón */
+    padding: 15px 20px;
+}
 }
 
 .header .logo {
