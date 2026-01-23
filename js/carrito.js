@@ -1,36 +1,50 @@
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+// Obtener carrito desde localStorage
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const contenedor = document.getElementById("carrito-container");
+const totalPrecioSpan = document.getElementById("total-precio");
 
-let total = 0;
-
+// Función para mostrar carrito
 function mostrarCarrito() {
     contenedor.innerHTML = "";
+    let total = 0;
 
     if (carrito.length === 0) {
         contenedor.innerHTML = "<p>Tu carrito está vacío 🛒</p>";
+        totalPrecioSpan.textContent = "S/. 0.00";
         return;
     }
 
-    carrito.forEach((p) => {
+    carrito.forEach((p, index) => {
         total += p.precio;
-        contenedor.innerHTML += `
-            <div class="item-carrito">
-                <span>${p.nombre}</span>
-                <span>S/. ${p.precio}</span>
+        const div = document.createElement("div");
+        div.className = "carrito-item";
+        div.innerHTML = `
+            <img src="${p.imagen}" alt="${p.nombre}">
+            <div class="carrito-item-info">
+                <h3>${p.nombre}</h3>
+                <p>S/. ${p.precio.toFixed(2)}</p>
+                <button onclick="eliminarProducto(${index})">Eliminar</button>
             </div>
         `;
+        contenedor.appendChild(div);
     });
 
-    contenedor.innerHTML += `
-        <div class="total">
-            Total a pagar: S/. ${total}
-        </div>
-    `;
+    totalPrecioSpan.textContent = `S/. ${total.toFixed(2)}`;
 }
 
-function vaciarCarrito() {
+// Función para eliminar producto
+function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+}
+
+// Vaciar carrito completo
+document.getElementById("vaciar-carrito").addEventListener("click", () => {
+    carrito = [];
     localStorage.removeItem("carrito");
-    location.reload();
-}
+    mostrarCarrito();
+});
 
+// Inicializar
 mostrarCarrito();

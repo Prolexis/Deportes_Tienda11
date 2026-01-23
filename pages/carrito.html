@@ -1,45 +1,53 @@
-<script>
-    if (localStorage.getItem("login") !== "true") {
-        window.location.href = "login.html";
-    }
-</script>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Carrito de Compras</title>
+    <title>Carrito de Compras | Walon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/carrito.css">
 
+    <!-- JS -->
     <script defer src="../js/carrito.js"></script>
 </head>
 <body>
 
 <header class="header">
-    <h1>🛒 Tu Carrito</h1>
+    <div class="header-container">
+        <img src="../img/logos/logo.w.jpeg" alt="Logo Walon" class="logo">
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="carrito.html" class="active">Carrito</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
 </header>
 
-<main class="carrito">
-    
-    <!-- Lista de productos -->
-    <section id="carrito-container" class="carrito-items">
-        <!-- JS insertará productos aquí -->
+<main class="contenedor carrito-page">
+
+    <h1 class="titulo-principal">🛒 Tu Carrito de Compras</h1>
+
+    <section class="carrito-container">
+        <!-- Lista de productos -->
+        <div id="carrito-container" class="carrito-items"></div>
+
+        <!-- Resumen de compra -->
+        <aside class="carrito-resumen">
+            <h2>Resumen de Compra</h2>
+            <p>Total: <span id="total-precio">S/. 0.00</span></p>
+            <button id="vaciar-carrito" class="btn-eliminar">Vaciar Carrito</button>
+            <button class="btn-comprar">Finalizar Compra</button>
+        </aside>
     </section>
 
-    <!-- Resumen -->
-    <aside class="carrito-resumen">
-        <h2>Resumen</h2>
-        <p>Total: <span id="total-precio">S/. 0.00</span></p>
-        <button class="btn-comprar">Finalizar compra</button>
-    </aside>
-
+    <a href="productos.html" class="volver">← Seguir comprando</a>
 </main>
 
 <footer class="footer">
-    <a href="productos.html">← Seguir comprando</a>
+    <p>&copy; 2026 Tienda Deportiva Walon | Trujillo - Perú</p>
 </footer>
 
 </body>

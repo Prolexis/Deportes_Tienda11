@@ -1,149 +1,158 @@
-.hero {
-    background: linear-gradient(to right, #000428, #004e92);
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: #007bff;
     color: white;
-    padding: 80px 20px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header .logo {
+    height: 50px;
+}
+
+.header .nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.header .nav a:hover,
+.header .nav a.active {
+    color: #ffdd00;
+}
+
+.btn-logout {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background: #b52b30;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: url('../img/banners/banner.jpeg') center/cover no-repeat;
+    color: white;
     text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 700px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
 .btn-primary {
-    background-color: #00d4ff;
-    color: #000;
+    background-color: #28a745;
+    color: white;
     padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #00b5e2;
+    background-color: #218838;
 }
 
-/* BENEFICIOS */
+/* ===== BENEFICIOS ===== */
 .beneficios {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 60px 20px;
-    background-color: #f4f6f8;
+    justify-content: space-around;
+    text-align: center;
+    margin: 60px 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .beneficio {
-    text-align: center;
-    max-width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .beneficio i {
-    font-size: 32px;
+    font-size: 2.5rem;
     color: #007bff;
     margin-bottom: 10px;
 }
 
-/* RESPONSIVE */
+.beneficio h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.beneficio p {
+    font-size: 0.95rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #fff;
+    margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .beneficios {
         flex-direction: column;
         align-items: center;
     }
-
-    .hero h1 {
-        font-size: 28px;
+    .header {
+        justify-content: center;
+        gap: 10px;
     }
-}
-
-/* ===== CONTACTO ===== */
-.contacto {
-    padding: 60px 20px;
-    background-color: #f4f6f8;
-}
-
-.contacto-container {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.contacto-info h2 {
-    margin-bottom: 15px;
-}
-
-.contacto-info p {
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.contacto-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contacto-info li {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.contacto-info i {
-    color: #007bff;
-    margin-right: 10px;
-}
-
-.contacto-form input,
-.contacto-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.contacto-form button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 12px;
-    border-radius: 25px;
-    font-weight: bold;
-}
-
-.contacto-form button:hover {
-    background-color: #0056b3;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .contacto-container {
-        grid-template-columns: 1fr;
-        padding: 25px;
-    }
-}
-.btn-logout {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.btn-logout:hover {
-    background: #bb2d3b;
 }
