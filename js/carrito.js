@@ -1,19 +1,24 @@
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-function agregarAlCarrito(producto) {
-    carrito.push(producto);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert("Producto agregado");
-}
-
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const contenedor = document.getElementById("carrito-container");
 
-if (contenedor) {
-    if (carrito.length === 0) {
-        contenedor.innerHTML = "<p>Carrito vacío</p>";
-    } else {
-        carrito.forEach(p => {
-            contenedor.innerHTML += `<p>${p}</p>`;
-        });
-    }
+let total = 0;
+
+if (carrito.length === 0) {
+    contenedor.innerHTML = "<p>Tu carrito está vacío</p>";
+} else {
+    carrito.forEach(p => {
+        total += p.precio;
+        contenedor.innerHTML += `
+            <div class="item-carrito">
+                <span>${p.nombre}</span>
+                <span>S/. ${p.precio}</span>
+            </div>
+        `;
+    });
+
+    contenedor.innerHTML += `
+        <div class="total">
+            Total: S/. ${total}
+        </div>
+    `;
 }

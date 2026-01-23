@@ -1,0 +1,21 @@
+#carrito-container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 15px;
+}

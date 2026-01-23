@@ -1,27 +1,9 @@
-const contenedor = document.getElementById("lista-productos");
-const filtro = document.getElementById("filtroCategoria");
+function agregarAlCarrito(nombre) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function mostrarProductos(lista) {
-    contenedor.innerHTML = "";
-    lista.forEach(p => {
-        contenedor.innerHTML += `
-            <div class="producto" data-categoria="${p.categoria}">
-                <h3>${p.nombre}</h3>
-                <img src="${p.img}">
-                <p>S/. ${p.precio}</p>
-                <button onclick="agregarAlCarrito('${p.nombre}')">Agregar</button>
-            </div>
-        `;
-    });
+    const producto = productos.find(p => p.nombre === nombre);
+    carrito.push(producto);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    alert("Producto agregado al carrito");
 }
-
-mostrarProductos(productos);
-
-filtro.addEventListener("change", () => {
-    const cat = filtro.value;
-    if (cat === "todos") {
-        mostrarProductos(productos);
-    } else {
-        mostrarProductos(productos.filter(p => p.categoria === cat));
-    }
-});
