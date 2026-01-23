@@ -4,3 +4,4 @@ const productos = [
     { id: 3, nombre: "Zapatillas", precio: 100 },
     { id: 4, nombre: "Casacas", precio: 80 }
 ];
+export { productos };

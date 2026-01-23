@@ -39,3 +39,8 @@ button:hover {
         font-size: 22px;
     }
 }
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+}

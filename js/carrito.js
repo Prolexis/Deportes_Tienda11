@@ -22,3 +22,4 @@ if (carrito.length === 0) {
         </div>
     `;
 }
+//claro

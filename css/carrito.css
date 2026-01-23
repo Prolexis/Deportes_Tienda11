@@ -1,3 +1,4 @@
+
 #carrito-container {
     max-width: 500px;
     margin: auto;
@@ -18,4 +19,14 @@
     font-weight: bold;
     text-align: right;
     margin-top: 15px;
+}
+
+button#checkout {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }

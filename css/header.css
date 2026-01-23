@@ -21,3 +21,13 @@
 .header nav a:hover {
     text-decoration: underline;
 }
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header nav {
+        margin-top: 10px;
+    }
+}
