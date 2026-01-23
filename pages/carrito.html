@@ -1,8 +1,15 @@
+<script>
+    if (localStorage.getItem("login") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Carrito</title>
+    <title>Carrito de Compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/carrito.css">
@@ -11,10 +18,29 @@
 </head>
 <body>
 
-<h2>Tu Carrito</h2>
-<div id="carrito-container"></div>
+<header class="header">
+    <h1>🛒 Tu Carrito</h1>
+</header>
 
-<a href="productos.html">Seguir comprando</a>
+<main class="carrito">
+    
+    <!-- Lista de productos -->
+    <section id="carrito-container" class="carrito-items">
+        <!-- JS insertará productos aquí -->
+    </section>
+
+    <!-- Resumen -->
+    <aside class="carrito-resumen">
+        <h2>Resumen</h2>
+        <p>Total: <span id="total-precio">S/. 0.00</span></p>
+        <button class="btn-comprar">Finalizar compra</button>
+    </aside>
+
+</main>
+
+<footer class="footer">
+    <a href="productos.html">← Seguir comprando</a>
+</footer>
 
 </body>
-</html>     
+</html>

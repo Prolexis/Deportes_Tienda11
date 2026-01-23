@@ -3,10 +3,15 @@ const contenedor = document.getElementById("carrito-container");
 
 let total = 0;
 
-if (carrito.length === 0) {
-    contenedor.innerHTML = "<p>Tu carrito está vacío</p>";
-} else {
-    carrito.forEach(p => {
+function mostrarCarrito() {
+    contenedor.innerHTML = "";
+
+    if (carrito.length === 0) {
+        contenedor.innerHTML = "<p>Tu carrito está vacío 🛒</p>";
+        return;
+    }
+
+    carrito.forEach((p) => {
         total += p.precio;
         contenedor.innerHTML += `
             <div class="item-carrito">
@@ -18,8 +23,14 @@ if (carrito.length === 0) {
 
     contenedor.innerHTML += `
         <div class="total">
-            Total: S/. ${total}
+            Total a pagar: S/. ${total}
         </div>
     `;
 }
-//claro
+
+function vaciarCarrito() {
+    localStorage.removeItem("carrito");
+    location.reload();
+}
+
+mostrarCarrito();

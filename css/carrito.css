@@ -1,32 +1,65 @@
+.carrito {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.carrito h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
 #carrito-container {
-    max-width: 500px;
-    margin: auto;
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .item-carrito {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-carrito:last-child {
+    border-bottom: none;
 }
 
 .total {
-    font-size: 18px;
-    font-weight: bold;
     text-align: right;
+    font-size: 20px;
+    font-weight: bold;
     margin-top: 15px;
 }
 
-button#checkout {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
+.acciones-carrito {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-secundario {
+    background: #6c757d;
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.btn-secundario:hover {
+    background: #5a6268;
+}
+
+.btn-peligro {
+    background: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.btn-peligro:hover {
+    background: #b52a37;
 }

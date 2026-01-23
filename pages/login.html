@@ -1,4 +1,45 @@
-<html:t5>
 <!DOCTYPE html>
-<html lang="es">    
-</html:t5>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión | Tienda Deportiva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- JS -->
+    <script defer src="../js/login.js"></script>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <p>Accede para continuar a la tienda</p>
+
+    <form id="loginForm">
+        <input 
+            type="email" 
+            id="email" 
+            placeholder="Correo electrónico" 
+            required
+        >
+
+        <input 
+            type="password" 
+            id="password" 
+            placeholder="Contraseña" 
+            required
+        >
+
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <a href="../index.html" class="volver">← Volver al inicio</a>
+</div>
+
+</body>
+</html>

@@ -2,9 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
+    <script>
+    if (localStorage.getItem("login") !== "true") {
+        window.location.href = "pages/login.html";
+    }
+    </script>
+
     <title>Tienda Deportiva Walon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//hola
+
+    <!-- SEO BÁSICO -->
+    <meta name="description" content="Tienda deportiva Walon: productos deportivos de calidad al mejor precio">
+    <meta name="author" content="Walon">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
@@ -16,25 +27,71 @@
     <!-- JS -->
     <script defer src="js/main.js"></script>
 </head>
+
 <body>
 
+<!-- ========== HEADER ========== -->
 <header class="header">
-    <img src="assets/img/logos/logo.w.jpeg" class="logo">
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="pages/productos.html">Productos</a>
-        <a href="pages/carrito.html">Carrito</a>
-        <a href="pages/contacto.html">Contacto</a>
-    </nav>
+    <div class="header-container">
+        <img src="img/logo walon.jpeg" alt="Logo Walon" class="logo">
+
+        <nav class="nav">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="pages/productos.html">Productos</a>
+            <a href="pages/carrito.html">Carrito</a>
+            <a href="pages/contacto.html">Contacto</a>
+        </nav>
+    </div>
 </header>
 
-<section class="hero">
-    <h1>Bienvenido a la Tienda Deportiva Walon</h1>
-    <p>Los mejores productos deportivos al mejor precio</p>
-</section>
 
+
+<!-- ========== HERO ========== -->
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Vive el Deporte con Walon</h1>
+            <p>
+                Encuentra polos, zapatillas, pelotas y más.
+                Calidad, comodidad y estilo en un solo lugar.
+            </p>
+
+            <a href="pages/productos.html" class="btn-primary">
+                Ver productos
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== BENEFICIOS ========== -->
+    <section class="beneficios">
+        <div class="beneficio">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Envío rápido</h3>
+            <p>Entregas seguras a todo el Perú</p>
+        </div>
+
+        <div class="beneficio">
+            <i class="fa-solid fa-star"></i>
+            <h3>Alta calidad</h3>
+            <p>Productos originales y duraderos</p>
+        </div>
+
+        <div class="beneficio">
+            <i class="fa-solid fa-headset"></i>
+            <h3>Soporte 24/7</h3>
+            <p>Atención personalizada</p>
+        </div>
+    </section>
+</main>
+
+<button onclick="cerrarSesion()" class="btn-logout">
+    Cerrar sesión
+</button>
+
+
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
-    <p>&copy; Walon - Trujillo 2024</p>
+    <p>&copy; 2026 Tienda Deportiva Walon | Trujillo - Perú</p>
 </footer>
 
 </body>

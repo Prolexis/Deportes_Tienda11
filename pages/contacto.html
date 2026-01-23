@@ -2,21 +2,67 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contacto</title>
+    <title>Contacto | Tienda Deportiva Walon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-<h2>Contáctanos</h2>
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <img src="img/logo walon.jpeg" alt="Logo Walon" class="logo">
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </nav>
+    </div>
+</header>
 
-<form>
-    <input type="text" placeholder="Nombre">
-    <input type="email" placeholder="Correo">
-    <textarea placeholder="Mensaje"></textarea>
-    <button>Enviar</button>
-</form>
+<!-- CONTENIDO -->
+<main>
+    <section class="contacto">
+        <div class="contacto-container">
+
+            <div class="contacto-info">
+                <h2>Contáctanos</h2>
+                <p>
+                    ¿Tienes alguna consulta o necesitas más información?
+                    Escríbenos y te responderemos lo antes posible.
+                </p>
+
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Trujillo - Perú</li>
+                    <li><i class="fa-solid fa-envelope"></i> contacto@walon.com</li>
+                    <li><i class="fa-solid fa-phone"></i> +51 999 888 777</li>
+                </ul>
+            </div>
+
+            <form class="contacto-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea placeholder="Escribe tu mensaje" rows="5" required></textarea>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2024 Tienda Deportiva Walon | Trujillo - Perú</p>
+</footer>
 
 </body>
 </html>
-
